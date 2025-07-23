@@ -33,7 +33,7 @@
      npm start
 
 # link Demo
-https://kuro-play-anime-tcj5.vercel.app/
+https://kuro-play-anime.vercel.app/
 
 
 
