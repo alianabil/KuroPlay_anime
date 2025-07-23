@@ -1,0 +1,233 @@
+/* Gallery Page Styles */
+.gallery-page-wrapper {
+  /* New wrapper for full background */
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 50%,
+    #0f3460 100%
+  ); /* Background from Popular.css */
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 0; /* Padding for the entire page */
+  transition: background 0.3s ease, color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Gallery Page Wrapper */
+.homepage.light .gallery-page-wrapper {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
+  color: #333333;
+}
+
+.gallery-container {
+  /* This now handles max-width and centering */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Inner padding for content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.back {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #4ecdc4, #48b7a8);
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.3);
+}
+
+/* Light Mode Styles for Back Button */
+.homepage.light .back a {
+  background: linear-gradient(135deg, #3cb0a5, #4ecdc4);
+  color: #ffffff;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.2);
+}
+
+.back a:hover {
+  background: linear-gradient(135deg, #3cb0a5, #4ecdc4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
+}
+
+/* Light Mode Styles for Back Button Hover */
+.homepage.light .back a:hover {
+  background: linear-gradient(135deg, #4ecdc4, #3cb0a5);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+.big-image {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 7px; /* Consistent with anime-card */
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05); /* Card background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: 5px solid rgba(138, 43, 226, 0.3); /* Card border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  padding: 1rem; /* Add padding inside the card */
+  display: flex; /* To center the image if it's smaller */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Light Mode Styles for Big Image */
+.homepage.light .big-image {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(138, 43, 226, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.big-image:hover {
+  transform: translateY(-5px) scale(1.01); /* Slight lift on hover */
+  box-shadow: 0 15px 40px rgba(138, 43, 226, 0.6);
+  border-color: rgba(138, 43, 226, 0.6);
+}
+
+/* Light Mode Styles for Big Image Hover */
+.homepage.light .big-image:hover {
+  box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+.big-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure image fits without cropping */
+  display: block;
+  /* Note: Inline styles for border, filter, transform are present in Gallery.tsx
+     and will override CSS for these specific properties on the img tag. */
+}
+
+.small-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px; /* Match big image width */
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  transition: border-top-color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Small Images Border */
+.homepage.light .small-images {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.image-con {
+  width: 100px; /* Fixed thumbnail width */
+  height: 140px; /* Fixed thumbnail height */
+  border-radius: 7px; /* Consistent with anime-card */
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05); /* Card background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: 5px solid rgba(138, 43, 226, 0.3); /* Card border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex; /* To center the image if it's smaller */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Light Mode Styles for Image Container */
+.homepage.light .image-con {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(138, 43, 226, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-con:hover {
+  transform: translateY(-5px) scale(1.05); /* Slight lift and scale on hover */
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+  border-color: rgba(138, 43, 226, 0.6);
+}
+
+/* Light Mode Styles for Image Container Hover */
+.homepage.light .image-con:hover {
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+.image-con img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container */
+  display: block;
+  /* Note: Inline styles for border, filter, transform are present in Gallery.tsx
+     and will override CSS for these specific properties on the img tag. */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .big-image {
+    height: 400px;
+  }
+  .small-images {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  .image-con {
+    width: 80px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    /* Adjust padding for smaller screens */
+    padding: 0 1rem;
+  }
+  .big-image {
+    height: 300px;
+    padding: 0.8rem;
+  }
+  .small-images {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.8rem;
+  }
+  .image-con {
+    width: 70px;
+    height: 100px;
+  }
+  .back a {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    /* Adjust padding for smallest screens */
+    padding: 0 0.5rem;
+  }
+  .big-image {
+    height: 250px;
+    padding: 0.5rem;
+  }
+  .small-images {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 0.5rem;
+  }
+  .image-con {
+    width: 60px;
+    height: 85px;
+  }
+}

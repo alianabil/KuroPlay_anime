@@ -1,0 +1,480 @@
+/* Homepage Styles */
+.homepage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Homepage Wrapper */
+.homepage.light {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
+  color: #333333;
+}
+
+/* Header Styles - Three Column Layout */
+.homepage-header {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 26, 46, 0.95);
+  transition: background 0.3s ease, border-bottom-color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Header */
+.homepage.light .homepage-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo Section - Left */
+.logo-section {
+  flex: 0 0 auto;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #8a2be2, #9370db, #ba55d3);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  white-space: nowrap;
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Logo Text */
+.homepage.light .logo-text {
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Search Section - Center */
+.search-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Styles for Search Input Wrapper */
+.homepage.light .search-input-wrapper {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #4ecdc4;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+/* Light Mode Styles for Search Input Wrapper Focus */
+.homepage.light .search-input-wrapper:focus-within {
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.15);
+}
+
+.search-icon {
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Search Icon */
+.homepage.light .search-icon {
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Search Input */
+.homepage.light .search-input {
+  color: #333333;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Light Mode Styles for Search Input Placeholder */
+.homepage.light .search-input::placeholder {
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #8a2be2, #9370db);
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Light Mode Styles for Search Button */
+.homepage.light .search-btn {
+  background: linear-gradient(135deg, #9370db, #8a2be2);
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #9932cc, #8a2be2);
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);
+}
+
+/* Light Mode Styles for Search Button Hover */
+.homepage.light .search-btn:hover {
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.25);
+}
+
+/* Filter Section - Right */
+.filter-section {
+  flex: 0 0 auto;
+  display: flex; /* Ensure it's a flex container */
+  align-items: center; /* Align items vertically */
+  gap: 1rem; /* Space between filter buttons and theme toggle */
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(30, 30, 60, 0.8);
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Light Mode Styles for Filter Button */
+.homepage.light .filter-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(138, 43, 226, 0.15);
+  color: #333333;
+}
+
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 43, 226, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+/* Light Mode Styles for Filter Button ::before */
+.homepage.light .filter-btn::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 43, 226, 0.15),
+    transparent
+  );
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.6);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+  color: #ffffff;
+}
+
+/* Light Mode Styles for Filter Button Hover */
+.homepage.light .filter-btn:hover {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+  color: #333333;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #8a2be2, #9370db, #ba55d3);
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.6);
+  color: #ffffff;
+}
+
+/* Light Mode Styles for Active Filter Button */
+.homepage.light .filter-btn.active {
+  background: linear-gradient(135deg, #9370db, #8a2be2, #ba55d3);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.3);
+}
+
+.filter-btn.active:hover {
+  background: linear-gradient(135deg, #9932cc, #8a2be2, #9370db);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.7);
+}
+
+/* Light Mode Styles for Active Filter Button Hover */
+.homepage.light .filter-btn.active:hover {
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
+}
+
+.filter-btn i {
+  font-size: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Styles for Theme Toggle Button */
+.homepage.light .theme-toggle-button {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.theme-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Light Mode Styles for Theme Toggle Button Hover */
+.homepage.light .theme-toggle-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+/* Content Area */
+.homepage-content {
+  padding: 2rem 0;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-title-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.current-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Current Page Title */
+.homepage.light .current-page-title {
+  color: #333333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #8a2be2, #9370db);
+  margin: 1rem auto;
+  border-radius: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    gap: 1rem;
+  }
+  .filter-btn span {
+    display: none;
+  }
+  .filter-btn {
+    padding: 0.75rem;
+    min-width: 45px;
+    justify-content: center;
+  }
+  .current-page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .logo-section,
+  .search-section,
+  .filter-section {
+    flex: none;
+    width: 100%;
+  }
+  .search-section {
+    order: 2;
+  }
+  .filter-section {
+    order: 3;
+  }
+  .filter-buttons {
+    justify-content: center;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .current-page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-header {
+    padding: 1rem 0;
+  }
+  .filter-btn {
+    flex: 1;
+    min-width: 60px;
+  }
+  .search-input-wrapper {
+    padding: 0.3rem;
+  }
+  .search-input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .search-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading and Animation Effects */
+.homepage-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff5252, #26a69a);
+}

@@ -1,0 +1,302 @@
+/* Footer Styles */
+.footer {
+  /* Menggunakan background gradient yang sama dengan homepage */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e0e0e0; /* Warna teks terang */
+  padding: 60px 20px; /* Padding lebih besar untuk tampilan yang lebih lega */
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font konsisten dengan homepage */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Border atas yang halus */
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3); /* Bayangan halus di bagian atas footer */
+  opacity: 0; /* Mulai dengan opacity 0 untuk animasi masuk */
+  animation: fadeIn 1s ease-out forwards; /* Animasi fade-in saat footer muncul */
+  transition: background 0.3s ease, color 0.3s ease, border-top-color 0.3s ease,
+    box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Footer */
+.homepage.light .footer {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
+  color: #333333;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Keyframe untuk animasi fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1400px; /* Lebar maksimum konsisten dengan header homepage */
+  margin: 0 auto;
+  gap: 40px; /* Jarak antar bagian lebih besar */
+  padding-bottom: 40px; /* Padding bawah sebelum copyright */
+}
+
+.footer-logo,
+.footer-nav,
+.footer-social {
+  flex: 1;
+  min-width: 220px; /* Minimum width untuk setiap bagian */
+  /* Animasi masuk untuk setiap bagian footer */
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* Delay animasi untuk setiap bagian */
+.footer-logo {
+  animation-delay: 0.2s;
+}
+.footer-nav {
+  animation-delay: 0.4s;
+}
+.footer-social {
+  animation-delay: 0.6s;
+}
+
+/* Keyframe untuk animasi slide-in-up */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-logo-text {
+  font-size: 2.2rem; /* Ukuran font logo lebih besar */
+  font-weight: 800; /* Lebih tebal */
+  margin-bottom: 15px;
+  /* Gradient teks yang sama dengan logo di homepage */
+  background: linear-gradient(45deg, #8a2be2, #9370db, #ba55d3);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite; /* Animasi gradient */
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Footer Logo Text */
+.homepage.light .footer-logo-text {
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
+}
+
+/* Animasi gradientShift dari Homepage.css */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.footer-tagline {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #b0b0b0;
+  max-width: 300px; /* Batasi lebar tagline */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Footer Tagline */
+.homepage.light .footer-tagline {
+  color: #666666;
+}
+
+.footer-nav {
+  text-align: left;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px; /* Jarak antar link lebih besar */
+}
+
+.footer-link {
+  color: #c0c0c0; /* Warna link sedikit lebih terang */
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+  position: relative;
+  display: inline-block; /* Agar transform bekerja */
+}
+
+/* Light Mode Styles for Footer Link */
+.homepage.light .footer-link {
+  color: #555555;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: linear-gradient(90deg, #8a2be2, #9370db); /* Underline gradient */
+  transition: width 0.3s ease-out;
+}
+
+.footer-link:hover {
+  color: #ffffff; /* Warna link putih saat hover */
+  transform: translateX(5px); /* Efek geser saat hover */
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.6); /* Efek glow pada teks */
+}
+
+/* Light Mode Styles for Footer Link Hover */
+.homepage.light .footer-link:hover {
+  color: #333333;
+  text-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.social-heading {
+  font-size: 1.2rem; /* Ukuran heading sosial lebih besar */
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Social Heading */
+.homepage.light .social-heading {
+  color: #333333;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px; /* Jarak antar ikon lebih besar */
+}
+
+.social-icon {
+  color: #c0c0c0;
+  font-size: 28px; /* Ukuran ikon lebih besar */
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+/* Light Mode Styles for Social Icon */
+.homepage.light .social-icon {
+  color: #555555;
+}
+
+.social-icon:hover {
+  color: #ff6b6b; /* Warna aksen saat hover */
+  transform: translateY(-3px) scale(1.1); /* Efek melayang dan membesar */
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.8); /* Efek glow pada ikon */
+  animation: pulseGlow 1.5s infinite alternate; /* Animasi pulse glow */
+}
+
+/* Light Mode Styles for Social Icon Hover */
+.homepage.light .social-icon:hover {
+  color: #ff6b6b; /* Keep accent color */
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* Keyframe untuk animasi pulse glow pada ikon sosial */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 0px rgba(255, 107, 107, 0);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Border lebih halus */
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.8s; /* Delay agar muncul setelah konten utama footer */
+  transition: border-top-color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Footer Bottom */
+.homepage.light .footer-bottom {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: #909090; /* Warna copyright lebih lembut */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Footer Copyright */
+.homepage.light .footer-copyright {
+  color: #777777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .footer-logo,
+  .footer-nav,
+  .footer-social {
+    min-width: unset;
+    width: 100%;
+    margin-bottom: 0; /* Reset margin-bottom */
+  }
+  .footer-nav {
+    order: 2;
+  }
+  .footer-social {
+    order: 3;
+  }
+  .footer-logo {
+    order: 1;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-logo-text {
+    font-size: 1.8rem;
+  }
+  .footer-tagline {
+    max-width: 80%; /* Sesuaikan lebar tagline di mobile */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 15px;
+  }
+  .footer-logo-text {
+    font-size: 1.6rem;
+  }
+  .social-icon {
+    font-size: 24px;
+  }
+}

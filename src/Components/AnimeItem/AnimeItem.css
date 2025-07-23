@@ -1,0 +1,750 @@
+/* AnimeItem Page Wrapper for full background */
+.anime-item-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 50%,
+    #0f3460 100%
+  ); /* Consistent background */
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 0; /* Padding for the entire page */
+  transition: background 0.3s ease, color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for AnimeItem Page Wrapper */
+.homepage.light .anime-item-page-wrapper {
+  background: linear-gradient(135deg, #e0e2e5 0%, #f0f2f5 50%, #ffffff 100%);
+  color: #333333;
+}
+
+/* AnimeItem Container (inner content wrapper) */
+.anime-item-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #4ecdc4, #48b7a8);
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.3);
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Light Mode Styles for Back Button */
+.homepage.light .back-button {
+  background: linear-gradient(135deg, #3cb0a5, #4ecdc4);
+  color: #ffffff;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.2);
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #3cb0a5, #4ecdc4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
+}
+
+/* Light Mode Styles for Back Button Hover */
+.homepage.light .back-button:hover {
+  background: linear-gradient(135deg, #4ecdc4, #3cb0a5);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+/* Wrapper for the details section to hold background */
+.details-section-wrapper {
+  position: relative;
+  background: rgba(26, 26, 46, 0.8); /* Card background */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Details Section Wrapper */
+.homepage.light .details-section-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.details-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.4); /* Slightly more blur and darker for better text contrast */
+  transform: scale(1.05);
+  z-index: 1;
+  transition: filter 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Details Background */
+.homepage.light .details-background {
+  filter: blur(8px) brightness(0.8); /* Lighter for light mode */
+}
+
+.details-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(26, 26, 46, 0.95) 0%,
+    rgba(26, 26, 46, 0.8) 50%,
+    rgba(26, 26, 46, 0.6) 100%
+  ); /* Stronger overlay */
+  z-index: 2;
+  transition: background 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Details Overlay */
+.homepage.light .details-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+}
+
+.details-section-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+.anime-poster-wrapper {
+  flex-shrink: 0;
+  width: 300px;
+  height: 420px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 5px solid rgba(138, 43, 226, 0.5);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Styles for Anime Poster Wrapper */
+.homepage.light .anime-poster-wrapper {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(138, 43, 226, 0.25);
+}
+
+.anime-poster-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(138, 43, 226, 0.6);
+}
+
+/* Light Mode Styles for Anime Poster Wrapper Hover */
+.homepage.light .anime-poster-wrapper:hover {
+  box-shadow: 0 20px 50px rgba(138, 43, 226, 0.3);
+}
+
+.anime-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.anime-poster.loaded {
+  opacity: 1;
+}
+
+.poster-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  width: 90%;
+  height: 20px;
+  background: rgba(138, 43, 226, 0.7);
+  filter: blur(20px);
+  border-radius: 50%;
+  z-index: -1;
+  transition: background 0.3s ease, filter 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Poster Glow */
+.homepage.light .poster-glow {
+  background: rgba(138, 43, 226, 0.4);
+  filter: blur(15px);
+}
+
+.anime-header-and-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.anime-main-title {
+  font-size: 3.2rem; /* Slightly larger */
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(45deg, #8a2be2, #9370db, #ba55d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 25px rgba(138, 43, 226, 0.5); /* Stronger glow */
+  line-height: 1.2;
+  text-align: left;
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Anime Main Title */
+.homepage.light .anime-main-title {
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+}
+
+.anime-info-details {
+  /* No changes needed here */
+}
+
+.anime-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(160px, 1fr)
+  ); /* Slightly wider columns */
+  gap: 1.2rem; /* Increased gap */
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px; /* More rounded */
+  padding: 0.6rem 1.2rem; /* Slightly more padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.95rem; /* Slightly larger font */
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+/* Light Mode Styles for Meta Item */
+.homepage.light .meta-item {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.meta-item:hover {
+  background: rgba(138, 43, 226, 0.25); /* Stronger hover effect */
+  border-color: rgba(138, 43, 226, 0.6);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); /* Stronger glow on hover */
+}
+
+/* Light Mode Styles for Meta Item Hover */
+.homepage.light .meta-item:hover {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+}
+
+.meta-label {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75); /* Slightly brighter label */
+  font-size: 0.85rem; /* Slightly larger label font */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Meta Label */
+.homepage.light .meta-label {
+  color: rgba(51, 51, 51, 0.75);
+}
+
+.meta-value {
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0.3rem; /* Increased margin */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Meta Value */
+.homepage.light .meta-value {
+  color: #333333;
+}
+
+.score-value {
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* Increased gap */
+}
+
+.score-value i {
+  font-size: 0.9rem; /* Slightly larger icon */
+}
+
+.status-value {
+  color: #4ecdc4;
+}
+
+/* Section Styling (Synopsis, Trailer, Characters) - Consistent Card Look */
+.synopsis-section,
+.trailer-section,
+.characters-section {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Sections */
+.homepage.light .synopsis-section,
+.homepage.light .trailer-section,
+.homepage.light .characters-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-size: 2rem; /* Slightly larger */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #8a2be2, #9370db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.4); /* Stronger glow */
+  position: relative;
+  padding-bottom: 0.5rem;
+  transition: text-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Section Title */
+.homepage.light .section-title {
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px; /* Slightly wider underline */
+  height: 4px; /* Thicker underline */
+  background: linear-gradient(90deg, #8a2be2, #9370db);
+  border-radius: 2px;
+}
+
+.synopsis-text {
+  font-size: 1.05rem; /* Slightly larger font */
+  line-height: 1.7; /* Improved readability */
+  color: rgba(255, 255, 255, 0.95); /* Brighter text */
+  margin-bottom: 1.2rem; /* Increased margin */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Synopsis Text */
+.homepage.light .synopsis-text {
+  color: rgba(51, 51, 51, 0.95);
+}
+
+.read-more-btn {
+  background: linear-gradient(135deg, #8a2be2, #9370db);
+  border: none;
+  border-radius: 25px; /* More rounded */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem; /* Slightly more padding */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3); /* Added shadow */
+}
+
+/* Light Mode Styles for Read More Button */
+.homepage.light .read-more-btn {
+  background: linear-gradient(135deg, #9370db, #8a2be2);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.15);
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(135deg, #9932cc, #8a2be2);
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.5); /* Stronger shadow on hover */
+}
+
+/* Light Mode Styles for Read More Button Hover */
+.homepage.light .read-more-btn:hover {
+  background: linear-gradient(135deg, #8a2be2, #9932cc);
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.25);
+}
+
+.trailer-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Trailer Container */
+.homepage.light .trailer-container {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(138, 43, 226, 0.15);
+}
+
+.trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.no-trailer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for No Trailer */
+.homepage.light .no-trailer {
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.no-trailer i {
+  font-size: 3.5rem; /* Slightly larger icon */
+  margin-bottom: 1rem;
+  color: rgba(138, 43, 226, 0.4);
+}
+
+.no-trailer h3 {
+  font-size: 1.3rem; /* Slightly larger text */
+  margin: 0;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(130px, 1fr)
+  ); /* Slightly wider character cards */
+  gap: 1.8rem; /* Increased gap */
+}
+
+.character-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.character-card {
+  background: rgba(255, 255, 255, 0.08); /* Slightly brighter card background */
+  border-radius: 12px; /* More rounded */
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Styles for Character Card */
+.homepage.light .character-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.character-card:hover {
+  transform: translateY(-7px); /* More pronounced lift */
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.5); /* Stronger glow on hover */
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Light Mode Styles for Character Card Hover */
+.homepage.light .character-card:hover {
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.25);
+  border-color: rgba(138, 43, 226, 0.25);
+}
+
+.character-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Slightly taller image */
+  overflow: hidden;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.character-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 46, 0.95) 0%,
+    transparent 100%
+  ); /* Stronger overlay */
+  padding: 0.6rem; /* Slightly more padding */
+  color: #ffffff;
+  font-size: 0.85rem; /* Slightly larger font */
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Character Overlay */
+.homepage.light .character-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95) 0%,
+    transparent 100%
+  );
+  color: #333333;
+}
+
+.character-role {
+  color: rgba(255, 255, 255, 0.8); /* Brighter role text */
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for Character Role */
+.homepage.light .character-role {
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.character-info {
+  padding: 1rem 0.8rem; /* More padding */
+  text-align: center;
+}
+
+.character-name {
+  font-size: 1rem; /* Slightly larger font */
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.no-characters {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease; /* Added transition for theme change */
+}
+
+/* Light Mode Styles for No Characters */
+.homepage.light .no-characters {
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.no-characters i {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: rgba(138, 43, 226, 0.4);
+}
+
+.no-characters p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .details-section-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details-section-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .anime-poster-wrapper {
+    margin-bottom: 1.5rem; /* Increased margin */
+  }
+
+  .anime-main-title {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .anime-meta-grid {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .trailer-container iframe {
+    height: 350px;
+  }
+
+  .characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .character-image-wrapper {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anime-item-container {
+    padding: 0 1rem;
+  }
+
+  .details-section-wrapper {
+    padding: 1.5rem;
+  }
+
+  .anime-poster-wrapper {
+    width: 250px;
+    height: 350px;
+  }
+
+  .anime-main-title {
+    font-size: 2.2rem;
+  }
+
+  .meta-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .synopsis-text {
+    font-size: 0.95rem;
+  }
+
+  .read-more-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .trailer-container iframe {
+    height: 250px;
+  }
+
+  .characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1rem;
+  }
+
+  .character-image-wrapper {
+    height: 120px;
+  }
+
+  .character-name {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .anime-item-page-wrapper {
+    padding: 1rem 0;
+  }
+
+  .anime-item-container {
+    padding: 0 0.8rem;
+    gap: 1.5rem;
+  }
+
+  .details-section-wrapper {
+    padding: 1rem;
+  }
+
+  .anime-poster-wrapper {
+    width: 180px;
+    height: 250px;
+  }
+
+  .anime-main-title {
+    font-size: 1.9rem;
+  }
+
+  .anime-meta-grid {
+    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .meta-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .back-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .synopsis-section,
+  .trailer-section,
+  .characters-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .character-image-wrapper {
+    height: 100px;
+  }
+
+  .character-name {
+    font-size: 0.75rem;
+  }
+}
